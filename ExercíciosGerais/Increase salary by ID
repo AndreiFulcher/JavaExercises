@@ -1,0 +1,113 @@
+import entities.Employee;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        List<Employee> list = new ArrayList<>();
+
+        System.out.println("How many enployees will be registered?");
+        int n = sc.nextInt();
+
+        for(int i = 0; i < n; i++) {
+            System.out.printf("Employee #%d:\n", (i + 1));
+            System.out.println("Id: ");
+            Integer id = sc.nextInt();
+            System.out.println("Name: ");
+            sc.nextLine();
+            String name = sc.nextLine();
+            System.out.println("Salary: ");
+            Double salary = sc.nextDouble();
+
+            list.add(new Employee(id, name, salary));
+        }
+
+        System.out.println("Enter the enployee ID that will have salary increase: ");
+        int idSalary = sc.nextInt();
+        Integer pos = position(list, idSalary);
+        if(pos == null){
+            System.out.println("Employee not found");
+        }else{
+            System.out.println("Enter de percentage: ");
+            double percentage = sc.nextDouble();
+            list.get(pos).increaseSalary(percentage);
+        }
+
+        System.out.println();
+        System.out.println("List of employees: ");
+        for(Employee employee : list) {
+            System.out.println(employee);
+        }
+
+        sc.close();
+    }
+
+    public static Integer position(List<Employee> list, int id) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId() == id) {
+                return i;
+            }
+        }
+        return null;
+    }
+}
+
+package entities;
+
+public class Employee {
+
+    private Integer id;
+    private String name;
+    private Double salary;
+
+    public Employee() {
+
+    }
+
+    public Employee(Integer id, String name, Double salary) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public void increaseSalary(Double percentage) {
+        salary += (salary * percentage / 100.0);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]");
+    }
+}
