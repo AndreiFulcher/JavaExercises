@@ -1,4 +1,4 @@
-package Exercícios6;
+package Exercício6;
 
 public class TestaRelogio {
     public static void main(String[] args) {

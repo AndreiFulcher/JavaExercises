@@ -1,4 +1,4 @@
-package Exercícios7;
+package Exercício7;
 
 public class TestaPonto {
     public static void main(String[] args) {

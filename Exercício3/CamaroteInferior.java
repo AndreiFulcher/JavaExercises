@@ -1,4 +1,4 @@
-package Exercícios3;
+package Exercício3;
 
 public class CamaroteInferior extends Vip{
 

@@ -1,4 +1,4 @@
-package Exercícios6;
+package Exercício6;
 import java.text.DecimalFormat;
 
 public class Relogio {

@@ -1,4 +1,4 @@
-package Exercícios4;
+package Exercício4;
 
 public class ImovelNovo extends Imovel{
 

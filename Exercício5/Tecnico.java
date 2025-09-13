@@ -1,4 +1,4 @@
-package Exercícios5;
+package Exercício5;
 
 public class Tecnico extends Assistente{
 
