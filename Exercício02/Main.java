@@ -1,6 +1,6 @@
 package Exercício02;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         Rico rico = new Rico();
