@@ -12,7 +12,7 @@ public class Program {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter your name: ");
+        System.out.println("Enter your full name: ");
         String name = sc.nextLine();
         System.out.println("Enter the gross salary: ");
         double grossSalary = sc.nextDouble();
